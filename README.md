@@ -25,6 +25,8 @@ This research presents an automated approach for detecting stroke lesions in bra
 | **Precision** | 0.812 ± 0.167 | 0.812 ± 0.167 | 0.863 ± 0.035 |
 
 ### Performance Distribution
+![Performance Distribution](docs/images/performance_tiers.png)
+
 - **High Performance (≥0.8)**: 99 cases (49.5%) - excellent segmentation quality
 - **Good Performance (0.6-0.8)**: 77 cases (38.5%) - clinically acceptable results  
 - **Moderate Performance (0.4-0.6)**: 9 cases (4.5%) - limited clinical utility
@@ -33,7 +35,7 @@ This research presents an automated approach for detecting stroke lesions in bra
 ## 🏗️ Architecture & Methodology
 
 ### Complete Pipeline Architecture
-![Pipeline Overview](docs/images/pipeline_overview.png)
+![Pipeline Overview](docs/images/preprocessing_vs_alignment_3d_perspective.png)
 
 The system consists of 5 main stages:
 
@@ -55,7 +57,6 @@ The system consists of 5 main stages:
 - Training-ready .npy format generation
 
 #### Stage 4: Model Training
-![3D U-Net Architecture](docs/images/unet_architecture.png)
 
 **3D U-Net with Enhancements:**
 - **Input**: 2-channel (DWI + ADC)
@@ -66,9 +67,6 @@ The system consists of 5 main stages:
 - **Deep Supervision**: Auxiliary outputs at multiple decoder levels
 - **Training**: Mixed precision with gradient accumulation
 
-**Attention Mechanism:**
-![Attention Gates](docs/images/attention_mechanism.png)
-
 #### Stage 5: Clinical Inference
 - Sliding window inference with 25% overlap
 - GT-aware post-processing for false positive suppression
@@ -78,7 +76,8 @@ The system consists of 5 main stages:
 ## 🧠 Training Performance
 
 ### Learning Curves
-![Training Curves](docs/images/training_validation_curves.png)
+![Training Performance](docs/images/training_dice.png)
+![Loss Components](docs/images/loss_components_comparison.png)
 
 **Training Details:**
 - **Epochs**: 100 with early stopping
@@ -89,23 +88,11 @@ The system consists of 5 main stages:
 
 ## 🔬 Segmentation Results
 
-### Successful Cases
+### Example Segmentation Result
+![Segmentation Example](docs/images/patient_190_slice_89_final.png)
+*Comprehensive visualization showing DWI, ADC inputs, ground truth, and model prediction with performance metrics*
 
-#### Large Lesion Segmentation
-![Large Lesion Example](docs/images/large_lesion_example.png)
-*Patient 246: Dice=0.945, IoU=0.896, Sensitivity=0.992*
-
-#### Medium Lesion Segmentation  
-![Medium Lesion Example](docs/images/medium_lesion_example.png)
-*Patient 20: Dice=0.885, IoU=0.794, Sensitivity=0.944*
-
-#### Small Lesion Segmentation
-![Small Lesion Example](docs/images/small_lesion_example.png)
-*Patient 80: Dice=0.824, IoU=0.701, Sensitivity=0.818*
-
-### Challenging Cases
-![Failed Cases](docs/images/failed_cases_analysis.png)
-*Analysis of failure modes: over-prediction, under-prediction, and boundary ambiguity*
+The model demonstrates excellent performance across diverse stroke presentations, with 88% of cases achieving clinically acceptable results (Dice > 0.6).
 
 ## 📈 Performance Analysis by Lesion Size
 
@@ -241,15 +228,6 @@ This work was developed as part of a Bachelor of Technology thesis at Manipal In
 - **Ms. Aparna V** (Assistant Professor)
 
 **Institution**: Department of Electronics and Communication Engineering, Manipal Institute of Technology, Manipal Academy of Higher Education
-
-## 📊 Visualization Pipeline
-
-The system provides comprehensive visualization tools for:
-- Multi-modal input display (DWI + ADC)
-- Ground truth overlay
-- Prediction confidence mapping
-- Performance metrics calculation
-- Error analysis and case-by-case review
 
 ## ⚡ Future Enhancements
 
