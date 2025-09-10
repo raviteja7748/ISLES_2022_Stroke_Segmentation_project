@@ -1,0 +1,40 @@
+{
+  "patient_id": 1,
+  "case_id": "sub-strokecase0001_ses-0001",
+  "multimodal_shape": [
+    2,
+    224,
+    224,
+    144
+  ],
+  "mask_shape": [
+    224,
+    224,
+    144
+  ],
+  "lesion_voxels": 5963,
+  "modalities": [
+    "DWI",
+    "ADC"
+  ],
+  "normalization": "NONE_RAW_DATA",
+  "raw_statistics": {
+    "DWI": {
+      "mean": 62.564571380615234,
+      "std": 108.56425476074219,
+      "foreground_voxels": 4191168,
+      "min": 1.401298464324817e-45,
+      "max": 2007.8917236328125
+    },
+    "ADC": {
+      "mean": 0.41696447134017944,
+      "std": 0.7866120338439941,
+      "foreground_voxels": 4184689,
+      "min": 1.401298464324817e-45,
+      "max": 5.885670185089111
+    }
+  },
+  "data_type": "float32",
+  "note": "SEALS 2-modality raw data - normalization applied during training by dataset_3d.py",
+  "extraction_timestamp": "2025-08-18 03:34:09"
+}

@@ -1,0 +1,69 @@
+# Large dataset files
+*.nii.gz
+*.nii
+*.dcm
+*.dicom
+
+# Exclude full dataset directories
+ISLES-2022/
+preprocessed_universal/
+aligned_multimodal/
+dl_focus_labels_2_multimodal/
+dl_focus_slices_2_multimodal/
+
+# But include sample directories (we'll create these)
+!sample_data/
+!sample_data/**
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Environment files
+.env
+.venv
+env/
+venv/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Model checkpoints (large files)
+*.pth
+*.pkl
+*.h5
+*.hdf5
+
+# Log files
+*.log
+logs/
+training_logs_3d/
+checkpoints_3d/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Large output directories
+batch_results_*/
+saved_models_3d/

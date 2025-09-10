@@ -1,0 +1,9 @@
+{
+    "preprocessed": "preprocessed_universal",
+    "aligned": "aligned_multimodal", 
+    "slices": "dl_focus_slices_2_multimodal",
+    "labels": "dl_focus_labels_2_multimodal",
+    "models": "saved_models_3d",
+    "logs": "training_logs_3d",
+    "checkpoints": "checkpoints_3d"
+}
